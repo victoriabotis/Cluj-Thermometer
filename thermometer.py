@@ -1,25 +1,22 @@
 
-import date
+class Temperature_Cluj:
 
-class Temperature_Cluj():
-	def __init__(self, temperature = 0):
-	     self.temperature = temperature
+    def __init__(self, temperature):
+         self.temperature = temperature
 
-    def get_temperature(self):
-        print("Getting value")
-        return self._temperature
+    def get_temperature(self, unit="C"):
+        if unit == "C":
+            return self.temperature
+        elif unit == "F":
+            return self.to_fahrenheit(self.temperature)
 
-    def set_temperature(self, value):
-        if value < -273:
-            raise ValueError("Temperature below -273 is not possible")
-        print("Setting value")
-        self._temperature = value
+    def set_temperature(self, temperature):
+        self._temperature = temperature
 
-    def to_celsius(self):
-        pass
+    def to_celsius(self, temperature):
+        temperature = (temperature - 32) * 5 / 9
+        return temperature
     
-    def to_fahrenheit(self):
-        return (self.temperature * 1.8) + 32
-
-    temperature = property(get_temperature,set_temperature)
-
+    def to_fahrenheit(self, temperature):
+        temperature = temperature * 9 / 5 +32
+        return temperature

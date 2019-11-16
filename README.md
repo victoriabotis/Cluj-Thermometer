@@ -7,7 +7,7 @@ A Pyhton application that presents a thermometer object
 
 ## Implemented methods
 
-- *get_temperature
-- *set_temperature
-- *to_celsius
-- *to_fahrenheit
+- get_temperature
+- set_temperature
+- to_celsius
+- to_fahrenheit
